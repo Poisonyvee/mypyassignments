@@ -1,0 +1,23 @@
+# Calculating gross pay with overtime pay
+
+# Please enter 10.50 and not 10.5
+h = input("Enter Hours: ")
+r = input("Enter Rate: ")
+
+hrs = float(h)
+rat = float(r)
+
+# This function calculated both normal and overtime pay
+def computepay(c,a):
+    if hrs <= 40:
+        normpay = hrs * rat
+        return normpay
+    elif hrs > 40:
+        normhrs = 40
+        ovthrs = hrs - normhrs
+
+        ovtpay = (ovthrs * 1.5 * rat) + (normhrs * rat)
+        return ovtpay
+
+p = computepay(10,30)
+print(p)
