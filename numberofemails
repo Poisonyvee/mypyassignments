@@ -1,0 +1,25 @@
+# Write a program to read through the mbox-short.txt and figure out who has sent the greatest number of mail messages.
+# File name is mbox-short.txt - http://www.py4e.com/code3/mbox-short.txt
+# answer is: cwen@iupui.edu 5
+
+name = input('Enter file: ')
+if len(name) < 1 :
+    name = 'mbox-short.txt'
+handle = open(name)
+
+
+counts = dict()
+for line in handle :
+    if line.startswith("From:") :
+        wordy = line.split()
+        line = line.rstrip
+        email = wordy[1]
+        counts[email] = counts.get(email,0) + 1
+        #print(counts)
+largest = 0
+theword = None
+for k,v in counts.items() :
+    if v > largest :
+        largest = v
+        theword = k
+print(theword, largest)
