@@ -1,0 +1,13 @@
+# Building a list of words using split()
+
+fname = input("Enter file name: ")
+fh = open(fname)
+lst = list()
+for line in fh:
+    words = line.split()
+    lst.append(words)
+
+fulst = lst[0] + lst[1] + lst[2] + lst[3]
+lastlst = list(set(fulst))
+lastlst.sort()
+print(lastlst)
