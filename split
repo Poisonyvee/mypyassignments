@@ -1,4 +1,5 @@
 # Building a list of words using split()
+# File name mbox-short.txt - http://www.py4e.com/code3/mbox-short.txt
 
 fname = input("Enter file name: ")
 fh = open(fname)
