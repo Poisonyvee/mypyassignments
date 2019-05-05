@@ -1,0 +1,25 @@
+# This program prompts for a score between 0.0 and 1.0. If the score is out of range, an error is printed
+# If the score is between 0.0 and 1.0, a grade is printed using the following table:
+# Score Grade
+# >= 0.9 A
+# >= 0.8 B
+# >= 0.7 C
+# >= 0.6 D
+# < 0.6 F
+
+score = input("Enter a score between 0.0 and 1.0: ")
+
+scr = float(score)
+
+if scr <= 1.0 and scr >= 0.9:
+    print("A")
+elif scr < 0.9 and scr >= 0.8:
+    print("B")
+elif scr < 0.8 and scr >= 0.7:
+    print("C")
+elif scr < 0.7 and scr >= 0.6:
+    print("D")
+elif scr < 0.6 and scr >= 0.0:
+    print("F")
+else:
+    print("Out of Range ERROR!")
