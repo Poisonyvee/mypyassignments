@@ -1,0 +1,14 @@
+# Calculating gross pay, using float
+hrs = input("Enter Hours: ")
+rate = input("Enter rate: ")
+
+h = float(hrs)
+r = float(rate)
+pay = (40 * r)
+
+if h == 40:
+    print(pay)
+else:
+    if h > 40:
+        tpay = pay + (1.5 * r * 5)
+        print(tpay)
