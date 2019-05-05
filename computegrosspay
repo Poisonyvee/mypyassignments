@@ -1,0 +1,11 @@
+# This program prompts users for hours and rate per hour using input to compute gross pay
+
+hrs = input("Enter Hours: ")
+rhr = input("Enter Rate per hour: ")
+
+fhrs = float(hrs)
+frhr = float(rhr)
+
+pay = (fhrs * frhr)
+
+print(pay)
