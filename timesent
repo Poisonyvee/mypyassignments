@@ -1,0 +1,38 @@
+# Write a program to read through the mbox-short.txt and figure out the distribution by hour of the day for each of the messages. 
+# You can pull the hour out from the 'From ' line by finding the time and then splitting the string a second time using a colon.
+# "From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008"
+# Once you have accumulated the counts for each hour, print out the counts, sorted by hour.
+# Example: 
+# 04 3
+# 06 1
+# 07 1
+
+name = input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+counts = dict()
+for line in handle :
+    if line.startswith("From ") :
+        wordy = line.split()
+        line = line.rstrip
+        etime = wordy[5]
+        esthr = etime.split(':')
+        hrs = esthr[0]
+        counts[hrs] = counts.get(hrs, 0) + 1
+        #print(hrs)
+
+#print(counts)
+#x = sorted(counts.items())
+#print(x)
+#print(counts.items())
+
+lst = list()
+for key, val in counts.items() :
+    origtup = (key, val)
+    lst.append(origtup)
+lst = sorted(lst)
+
+for key, val in lst :
+    print(key, val)
+
