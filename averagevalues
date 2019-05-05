@@ -1,0 +1,29 @@
+#  Write a program that prompts for a file name, then opens that file and reads through the file, looking for lines of the form:
+# X-DSPAM-Confidence:    0.8475
+# Count these lines and extract the floating point values from each of the lines and compute the average of those values
+
+fname = input("Enter file name: ")
+fh = open(fname)
+num = 0
+tot = 0.0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") :
+        continue
+        quit()
+
+    cnt = line.find(':')
+
+    #print(cnt)
+    spc = line.find(' ', cnt)
+
+    #print(spc)
+    flnum = line[19: ]
+
+    #print(flnum)
+    mspace = flnum.lstrip()
+
+    #print(float(mspace))
+    fval = float(mspace)
+    tot = tot + fval
+    num = num + 1
+    #print(tot/num)
