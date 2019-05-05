@@ -1,5 +1,5 @@
 # Opening a file, then using split() to print out emails
-
+# File name is romeo.txt - http://www.py4e.com/code3/romeo.txt
 fname = input("Enter file name: ")
 if len(fname) < 1 : fname = "mbox-short.txt"
 
